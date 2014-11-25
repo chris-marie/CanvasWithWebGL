@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            text-shadow: 0 0 1px darkred;
+            color: white;
+            transition: background-color 500ms ease;
+            box-shadow: 0 0 16px 16px red   /* left right  blurRadius spread color*/
+        }
+        div:hover {
+            transition: background-color 500ms ease, left 6ms ease;
+            background-color: darkred;
+
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            background-image: url /////
+            backgroung-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        div.mask {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div.circle {
+            border: 3px solid black;
+            border-radius: 100%;
+            height: 5em;
+            width: 5em;
+        }
+
+    </style>
+
+</head>
+<body>
+<div>Data</div>
+
+<div class="mask"> </div>
+<div>
+</div>
+</body>
+</html>

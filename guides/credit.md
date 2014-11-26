@@ -3,6 +3,8 @@ In this directory, I am saving my code that I experimented with that is strongly
 I will try to be good about putting the source reference on each code example/file, but I will at least maintain here a complete list of the source material I use to teach myself web graphics programming for this application.
 
 Source:
-
+    - Learning WebGL "The Lessons" http://learningwebgl.com/blog/?page_id=1217
     - Introduction to WebGL by Luz Caballero https://dev.opera.com/articles/introduction-to-webgl-part-1/
     - WebGL Beginner's Guide – Diego Cantor, Brandon Jones
+    - Beginning WebGL for HTML5 – Brian Danchilla
+    - http://www.chromeexperiments.com/detail/editable-surface-graph/?f=webgl

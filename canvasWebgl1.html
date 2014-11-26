@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        #canvas1 {
+            height: 600px;
+            width: 800px;
+            border: 2px dotted blue;
+        }
+        ul {
+            float: right;
+            display: inline-block;
+            width: 30%;
+        }
+    </style>
+
+    <script>
+        var gl;
+        var cWidth, cHeight;
+
+        function checkKey(ev) {
+            switch(ev.keyCode) {
+                case 49: { //1
+                    gl.clearColor(0.3,0.7,0.2,1.0);
+                    clear(gl);
+                    break;
+                }
+                case 50: { //2
+                    gl.clearColor(0.3,0.2,0.7,1.0);
+                    clear(gl);
+                    break;
+                }
+                case 51: { //3
+                    var color = gl.getParameter(gl.COLOR_CLEAR_VALUE);
+                    console.log('clearColor = (' + Math.round(color[0] * 10) / 10 + ',' + Math.round(color[1] * 10) / 10 + ',' + Math.round(color[2] * 10) / 10 + ')');
+                    window.focus();
+                    break;
+                }
+            }
+        }
+
+        function getGLContext () {
+            var canvas;
+            canvas = document.getElementById("canvas1");
+            if (canvas === null) {
+                alert('canvas element is null');
+                return;
+            }
+            var names = ["webgl","experimental-webgl","webkit-3d","moz-webgl"];
+            var context;
+
+            for(i =0; i< names.length; i++) {
+                try {
+                    context = canvas.getContext(names[i]);
+                }
+                catch(e) {}
+                if (context) break;
+            }
+            if (gl === null) {
+                alet('webgl is not available');
+            } else {
+                console.log('got webgl context');
+                return context;
+            }
+        }
+
+        function clear(context) {
+            context.clear(context.COLOR_BUFFER_BIT);
+            context.viewport(0, 0, cWidth, cHeight);
+        }
+
+        function initWebGL() {
+            gl = getGLContext();
+        }
+
+        window.addEventListener('load', initWebGL);
+        window.addEventListener('keydown', checkKey);
+
+
+    </script>
+
+</head>
+<body>
+
+<canvas id="canvas1">Your browser does not support HTML5</canvas>
+
+<ul>First Concepts
+    <li>WebGL context is a handle.  Use it to access webgl api with JS</li>
+    <li>Attribute modifications are permanent because Webgl context is a 'state machine'.</li>
+</ul>
+
+</body>
+</html>

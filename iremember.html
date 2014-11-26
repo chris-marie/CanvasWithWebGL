@@ -91,6 +91,11 @@
             }
         }
 
+        function initWebGL() {
+            gl = getGLContext();
+        }
+
+        window.addEventListener('load', initWebGL);
 
     </script>
 </head>
